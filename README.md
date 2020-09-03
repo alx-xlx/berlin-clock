@@ -12,8 +12,11 @@
 <img src="https://img.shields.io/github/last-commit/alx-xlx/berlin-clock.svg?logo=Sublime+Text&logoColor=green&label=Active"/>
 <img alt="GitHub Release Date" src="https://img.shields.io/github/release-date/alx-xlx/berlin-clock">
 <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/alx-xlx/berlin-clock">
-<img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/alx-xlx/berlin-clock">
-<!-- <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Falx-xlx%2Fberlin-clock&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=Views&edge_flat=false"/> -->
+<!-- <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/alx-xlx/berlin-clock"> -->
+
+<img alt="GitHub code size in bytes" src="https://img.shields.io/github/languages/code-size/alx-xlx/berlin-clock">
+
+<img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Falx-xlx%2Fberlin-clock&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=Views&edge_flat=false"/>
 
 <!-- <hr/> -->
 </div>
