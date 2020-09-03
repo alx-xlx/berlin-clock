@@ -1,0 +1,132 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <title>Berlin Clock - github.com/alx-xlx</title>
+    <link type="image/x-icon" rel="Shortcut Icon" href="images/favicon.png">
+    <script type="text/javascript" src="javascript/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            window.setInterval(function () {
+                var time = new Date();
+                var seconds = time.getSeconds();
+                var minutes = time.getMinutes();
+                var hours = time.getHours();
+                var currentTime = hours + ':' + ((minutes < 10) ? '0' : '') + minutes;
+                $('#currentTime').html(currentTime);
+                $('#row1').html(' = 5 hours &times; ' + Math.floor(hours / 5)
+                    + ' = ' + formatHour(5 * Math.floor(hours / 5)));
+                $('#row2').html(' = ' + formatHour(hours % 5));
+                $('#row3').html(' = ' + ' 5 minutes &times; ' + Math.floor(minutes / 5)
+                    + ' = ' + formatMinute(5 * Math.floor(minutes / 5)));
+                $('#row4').html(' = ' + formatMinute(minutes % 5));
+                $('#row5').html(' = ' + (5 * Math.floor(hours / 5)) + ' + '
+                    + formatHour(hours % 5)
+                    + ' and ' + (5 * Math.floor(minutes / 5)) + ' + '
+                    + formatMinute(minutes % 5)
+                    + ' = ' + currentTime + ' hours');
+                setVisible('second', seconds % 2);
+                setVisible('hour05', hours >= 5);
+                setVisible('hour10', hours >= 10);
+                setVisible('hour15', hours >= 15);
+                setVisible('hour20', hours >= 20);
+                setVisible('hour01', (hours % 5) >= 1);
+                setVisible('hour02', (hours % 5) >= 2);
+                setVisible('hour03', (hours % 5) >= 3);
+                setVisible('hour04', (hours % 5) >= 4);
+                setVisible('minute05', minutes >= 5);
+                setVisible('minute10', minutes >= 10);
+                setVisible('minute15', minutes >= 15);
+                setVisible('minute20', minutes >= 20);
+                setVisible('minute25', minutes >= 25);
+                setVisible('minute30', minutes >= 30);
+                setVisible('minute35', minutes >= 35);
+                setVisible('minute40', minutes >= 40);
+                setVisible('minute45', minutes >= 45);
+                setVisible('minute50', minutes >= 50);
+                setVisible('minute55', minutes >= 55);
+                setVisible('minute01', (minutes % 5) >= 1);
+                setVisible('minute02', (minutes % 5) >= 2);
+                setVisible('minute03', (minutes % 5) >= 3);
+                setVisible('minute04', (minutes % 5) >= 4);
+            }, 100);
+        });
+        function setVisible(id, visible) {
+            if (visible) {
+                $('#' + id).show();
+            } else {
+                $('#' + id).hide();
+            }
+        }
+        function formatHour(hour) {
+            return hour + ' hour' + ((hour != 1) ? 's' : '');
+        }
+        function formatMinute(minute) {
+            return minute + ' minute' + ((minute != 1) ? 's' : '');
+        }
+    </script>
+</head>
+
+<body>
+    <div class="content">
+        <div
+            style="width: 320px; height: 265px; margin: auto; position: relative;
+            background: transparent url(images/background.png) no-repeat;">
+            <!-- style="width: 190px; height: 265px; margin: auto; position: relative;
+                background: transparent url(images/background.png) no-repeat top right;"> -->
+            <div id="row1" style="position: relative; left: 210px; top: 80px; line-height:22px"></div>   
+            <div id="row2" style="position: relative; left: 210px; top: 107px; line-height:22px"></div>   
+            <div id="row3" style="position: relative; left: 210px; top: 135px; line-height:22px"></div>   
+            <div id="row4" style="position: relative; left: 210px; top: 160px; line-height:22px"></div>   
+            <div id="row5" style="position: relative; left: 210px; top: 175px; line-height:26px; border-top: 1px solid #999"></div>
+            <img id="second" alt="" src="images/second.png"
+                style="position: absolute; left: 70px; top: 10px; width: 50px; height: 50px; display: none;">
+            <img id="hour05" alt="" src="images/hour-left.png"
+                style="position: absolute; left: 10px; top: 78px; width: 38px; height: 27px;">
+            <img id="hour10" alt="" src="images/hour-middle.png"
+                style="position: absolute; left: 54px; top: 78px; width: 38px; height: 27px;">
+            <img id="hour15" alt="" src="images/hour-middle.png"
+                style="position: absolute; left: 98px; top: 78px; width: 38px; height: 27px; display:none">
+            <img id="hour20" alt="" src="images/hour-right.png"
+                style="position: absolute; left: 142px; top: 78px; width: 38px; height: 27px; display:none">
+            <img id="hour01" alt="" src="images/hour-left.png"
+                style="position: absolute; left: 10px; top: 127px; width: 38px; height: 27px;">
+            <img id="hour02" alt="" src="images/hour-middle.png"
+                style="position: absolute; left: 54px; top: 127px; width: 38px; height: 27px;">
+            <img id="hour03" alt="" src="images/hour-middle.png"
+                style="position: absolute; left: 98px; top: 127px; width: 38px; height: 27px;">
+            <img id="hour04" alt="" src="images/hour-right.png"
+                style="position: absolute; left: 142px; top: 127px; width: 38px; height: 27px;">
+            <img id="minute05" alt="" src="images/minute-small-left.png"
+                style="position: absolute; left: 10px; top: 176px; width: 10px; height: 27px;">
+            <img id="minute10" alt="" src="images/minute-small-yellow.png"
+                style="position: absolute; left: 26px; top: 176px; width: 10px; height: 27px;">
+            <img id="minute15" alt="" src="images/minute-small-red.png"
+                style="position: absolute; left: 42px; top: 176px; width: 10px; height: 27px;">
+            <img id="minute20" alt="" src="images/minute-small-yellow.png"
+                style="position: absolute; left: 58px; top: 176px; width: 10px; height: 27px;">
+            <img id="minute25" alt="" src="images/minute-small-yellow.png"
+                style="position: absolute; left: 74px; top: 176px; width: 10px; height: 27px;">
+            <img id="minute30" alt="" src="images/minute-small-red.png"
+                style="position: absolute; left: 90px; top: 176px; width: 10px; height: 27px;">
+            <img id="minute35" alt="" src="images/minute-small-yellow.png"
+                style="position: absolute; left: 106px; top: 176px; width: 10px; height: 27px;">
+            <img id="minute40" alt="" src="images/minute-small-yellow.png"
+                style="position: absolute; left: 122px; top: 176px; width: 10px; height: 27px;">
+            <img id="minute45" alt="" src="images/minute-small-red.png"
+                style="position: absolute; left: 138px; top: 176px; width: 10px; height: 27px;">
+            <img id="minute50" alt="" src="images/minute-small-yellow.png"
+                style="position: absolute; left: 154px; top: 176px; width: 10px; height: 27px; display:none">
+            <img id="minute55" alt="" src="images/minute-small-right.png"
+                style="position: absolute; left: 170px; top: 176px; width: 10px; height: 27px; display:none">
+            <img id="minute01" alt="" src="images/minute-left.png"
+                style="position: absolute; left: 10px; top: 225px; width: 38px; height: 27px;">
+            <img id="minute02" alt="" src="images/minute-middle.png"
+                style="position: absolute; left: 54px; top: 225px; width: 38px; height: 27px;">
+            <img id="minute03" alt="" src="images/minute-middle.png"
+                style="position: absolute; left: 98px; top: 225px; width: 38px; height: 27px; display: inline;">
+            <img id="minute04" alt="" src="images/minute-right.png"
+                style="position: absolute; left: 142px; top: 225px; width: 38px; height: 27px; display:none">
+        </div>
+    </div>
+</div>
+</body>
+</html>
